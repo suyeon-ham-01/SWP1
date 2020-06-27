@@ -13,6 +13,7 @@ html = """
 			</p>
 		</form>
 		<p>
+		ANSWER - %(answer)s</br>
 		SUM : %(sum)s</br>
 		MUL : %(mul)s</br>
 		</p>

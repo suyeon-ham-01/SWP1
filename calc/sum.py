@@ -7,6 +7,10 @@ def application(environ, start_response):
 	y = d.get('y', [''])[0]
 	sum = 0
 	mul = 0
+	answer = ''
+	if '' in [x, y]:
+		answer = 'Please write the number'
+		
 	if '' not in [x, y]:
 		x, y = int(x), int(y)
 
@@ -16,6 +20,7 @@ def application(environ, start_response):
 	response_body = html % {
 		'sum' : sum,
 		'mul' : mul,
+		'answer' : answer,
 	}
 	start_response('200 OK', [
 		('Content-Type', 'text/html'),
