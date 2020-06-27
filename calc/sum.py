@@ -9,7 +9,7 @@ def application(environ, start_response):
 	mul = 0
 	answer = ''
 	try:
-		x, y = int(x), int(y)
+		x, y = float(x), float(y)
 		sum = x + y
 		mul = x * y
 	except ValueError:
