@@ -8,14 +8,14 @@ def application(environ, start_response):
 	sum = 0
 	mul = 0
 	answer = ''
-	if '' in [x, y]:
-		answer = 'Please write the number'
-		
-	if '' not in [x, y]:
+	try:
 		x, y = int(x), int(y)
-
 		sum = x + y
-		mul = x * y 
+		mul = x * y
+	except ValueError:
+		answer = 'Please write the number'
+		sum = 0
+		mul = 0 
 		
 	response_body = html % {
 		'sum' : sum,
